@@ -32,3 +32,26 @@ body.auth-open{overflow:hidden}
 [hidden]{display:none!important}
 @media(max-width:900px){.primary-nav{gap:12px}.auth-nav{gap:6px}.auth-nav-button{padding:9px 11px}}
 @media(max-width:640px){.primary-nav{gap:16px}.auth-nav{display:grid;grid-template-columns:1fr 1fr;width:100%;gap:9px}.auth-nav-button{width:100%;padding:12px}.auth-user{max-width:none;white-space:normal;overflow-wrap:anywhere;text-align:center}.auth-dialog{padding:32px 23px 25px}.auth-dialog h2{font-size:32px}}
+
+
+/* Welcome / sign-in landing page */
+.landing-page{min-height:100vh;background:var(--olive);color:var(--cream)}
+.landing-header{position:absolute;z-index:5;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;width:min(1280px,calc(100% - 64px));height:100px;margin:auto;border-bottom:1px solid #ffffff38}
+.landing-header .brand{color:#fff}
+.landing-actions{display:flex;align-items:center;gap:12px}
+.landing-main{position:relative;min-height:calc(100vh - 64px);display:flex;align-items:center;overflow:hidden;background:#26351f}
+.landing-image{position:absolute;inset:0;background:url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=2200&q=90") center/cover no-repeat;transform:scale(1.02)}
+.landing-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,30,17,.94) 0%,rgba(20,30,17,.78) 46%,rgba(20,30,17,.2) 100%),linear-gradient(0deg,rgba(20,30,17,.35),transparent 55%)}
+.landing-content{position:relative;z-index:1;width:min(1160px,calc(100% - 48px));margin:0 auto;padding:160px 0 100px;max-width:1160px}
+.landing-content h1{font:600 clamp(58px,8vw,104px)/.98 var(--serif);letter-spacing:-3px;color:#fff;margin:0 0 24px}
+.landing-content h1 em{font-weight:400;color:#e9b28d}
+.landing-lead{font:italic clamp(22px,3vw,32px) var(--serif);margin:0 0 12px;color:#f3eee2}
+.landing-copy{max-width:510px;color:#e1e3d8;font-size:15px;line-height:1.8}
+.landing-cta{display:flex;flex-wrap:wrap;gap:13px;margin-top:32px}
+.landing-cta button{cursor:pointer}
+.landing-footnote{margin-top:38px;color:#d1d5c7;font:italic 16px var(--serif)}
+.landing-caption{position:absolute;right:5%;bottom:34px;font-size:9px;letter-spacing:2.4px;color:#fff}
+.landing-footer{height:64px;padding:0 max(24px,calc((100% - 1160px)/2));display:flex;align-items:center;justify-content:space-between;background:#1d2919;color:#c9cdbf;font-size:10px;letter-spacing:.08em}
+.auth-gate-error{min-height:100vh;display:grid;align-content:center;justify-items:center;padding:30px;text-align:center;background:var(--paper);color:var(--olive)}
+.auth-gate-error a{color:var(--rust);font-weight:700}
+@media(max-width:640px){.landing-header{width:calc(100% - 36px);height:82px}.landing-header .brand-mark{font-size:29px}.landing-actions{gap:7px}.landing-actions .auth-nav-button{padding:10px 12px;font-size:10px}.landing-main{min-height:calc(100svh - 58px)}.landing-content{width:calc(100% - 40px);padding:132px 0 100px}.landing-content h1{font-size:clamp(56px,16vw,78px);letter-spacing:-2px}.landing-copy{font-size:13px;max-width:360px}.landing-cta{display:grid;grid-template-columns:1fr;max-width:330px}.landing-cta .button{justify-content:center;width:100%;min-height:48px}.landing-caption{font-size:8px;right:20px;bottom:24px}.landing-footer{height:58px;padding:0 20px;font-size:9px}}
