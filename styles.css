@@ -4,6 +4,7 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important;animation:none!important}}
 
 /* Supabase authentication */
+body.auth-open{overflow:hidden}
 .auth-nav{display:flex;align-items:center;gap:9px}
 .auth-nav-button{font:600 11px var(--sans);letter-spacing:.04em;border-radius:30px;padding:10px 15px;cursor:pointer}
 .auth-login{background:transparent;border:1px solid #ffffffa8;color:#fff}
