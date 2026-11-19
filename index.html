@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="script.js" defer></script>
 </head>
 <body>
@@ -24,6 +25,7 @@
       <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
         <a href="#story">Our story</a><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#visit">Find us</a>
         <a class="nav-cta" href="#visit">Book a table <span aria-hidden="true">↗</span></a>
+        <div class="auth-nav" id="auth-nav"><button class="auth-nav-button auth-login" type="button" data-auth-open="login">Log in</button><button class="auth-nav-button auth-signup" type="button" data-auth-open="signup">Sign up</button></div>
       </nav>
     </div>
   </header>
@@ -136,5 +138,26 @@
     </div>
     <div class="container footer-bottom"><span>© <span id="year"></span> Pizza Luka</span><span>Made for good food and good company.</span><a href="#top">Back to top ↑</a></div>
   </footer>
+
+
+  <div class="auth-modal" id="auth-modal" aria-hidden="true">
+    <div class="auth-backdrop" data-auth-close></div>
+    <section class="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title" aria-describedby="auth-description">
+      <button class="auth-close" type="button" aria-label="Close" data-auth-close>×</button>
+      <p class="eyebrow">PIZZA LUKA ACCOUNT</p>
+      <h2 id="auth-title">Welcome back.</h2>
+      <p class="auth-description" id="auth-description">Log in to your account to continue.</p>
+      <form id="auth-form" novalidate>
+        <label class="auth-field" for="auth-email">Email address<input id="auth-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label class="auth-field" for="auth-password">Password<input id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="Your password" required></label>
+        <label class="auth-field" id="auth-confirm-wrap" for="auth-confirm" hidden>Confirm password<input id="auth-confirm" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Enter your password again"></label>
+        <label class="auth-field" id="auth-new-password-wrap" for="auth-new-password" hidden>New password<input id="auth-new-password" name="newPassword" type="password" autocomplete="new-password" placeholder="Choose a new password"></label>
+        <button class="auth-forgot" id="auth-forgot" type="button">Forgot password?</button>
+        <p class="auth-message" id="auth-message" role="status" aria-live="polite"></p>
+        <button class="auth-submit" id="auth-submit" type="submit">Log in</button>
+      </form>
+      <p class="auth-switch" id="auth-switch">New to Pizza Luka? <button type="button" data-auth-switch="signup">Create an account</button></p>
+    </section>
+  </div>
 </body>
 </html>
