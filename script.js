@@ -148,7 +148,7 @@ if (year) year.textContent = new Date().getFullYear();
     }
   }
 
-  authNav.addEventListener("click", event => {
+  document.addEventListener("click", event => {
     const button = event.target.closest("[data-auth-open]");
     if (button) openModal(button.dataset.authOpen);
   });
