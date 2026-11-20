@@ -13,7 +13,7 @@ body.auth-open{overflow:hidden}
 .auth-logout{background:transparent;border:1px solid #ffffffa8;color:#fff}
 .auth-modal{display:none;position:fixed;inset:0;z-index:1000;align-items:center;justify-content:center;padding:18px;overflow-y:auto}
 .auth-modal.is-open{display:flex}
-.auth-backdrop{position:fixed;inset:0;background:rgba(15,22,13,.72);backdrop-filter:blur(5px)}
+.auth-backdrop{position:fixed;inset:0;background:linear-gradient(90deg,rgba(20,30,17,.88),rgba(20,30,17,.55)),url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=2200&q=90") center/cover no-repeat;backdrop-filter:blur(2px)}
 .auth-dialog{position:relative;z-index:1;width:min(100%,440px);max-height:calc(100dvh - 36px);overflow-y:auto;background:var(--paper);color:var(--ink);padding:38px;border:1px solid var(--line);box-shadow:0 24px 80px #0004}
 .auth-dialog .eyebrow{margin-bottom:10px}
 .auth-dialog h2{font-size:36px;margin:0 35px 8px 0}
@@ -107,3 +107,7 @@ body.auth-open{overflow:hidden}
  .auth-dialog{padding:33px 22px 25px}
  .auth-dialog:before{left:22px;right:22px}
 }
+
+/* Password state: crossed eye means hidden; open eye means visible. */
+.password-toggle .eye-slash{display:block}
+.password-toggle.is-visible .eye-slash{display:none}
