@@ -55,3 +55,26 @@ body.auth-open{overflow:hidden}
 .auth-gate-error{min-height:100vh;display:grid;align-content:center;justify-items:center;padding:30px;text-align:center;background:var(--paper);color:var(--olive)}
 .auth-gate-error a{color:var(--rust);font-weight:700}
 @media(max-width:640px){.landing-header{width:calc(100% - 36px);height:82px}.landing-header .brand-mark{font-size:29px}.landing-actions{gap:7px}.landing-actions .auth-nav-button{padding:10px 12px;font-size:10px}.landing-main{min-height:calc(100svh - 58px)}.landing-content{width:calc(100% - 40px);padding:132px 0 100px}.landing-content h1{font-size:clamp(56px,16vw,78px);letter-spacing:-2px}.landing-copy{font-size:13px;max-width:360px}.landing-cta{display:grid;grid-template-columns:1fr;max-width:330px}.landing-cta .button{justify-content:center;width:100%;min-height:48px}.landing-caption{font-size:8px;right:20px;bottom:24px}.landing-footer{height:58px;padding:0 20px;font-size:9px}}
+
+
+/* Mobile navigation, password visibility and polished account panel */
+.menu-toggle{cursor:pointer;align-items:center;justify-content:center}
+.menu-toggle:focus-visible,.password-toggle:focus-visible{outline:2px solid #e9b28d;outline-offset:3px}
+.password-control{position:relative;display:flex;align-items:center}
+.password-control input{padding-right:88px!important}
+.password-toggle{position:absolute;right:8px;top:50%;transform:translateY(-50%);display:inline-flex;align-items:center;gap:5px;padding:6px 8px;border:0;border-radius:18px;background:#f1eee5;color:var(--olive);font:700 10px var(--sans);cursor:pointer}
+.password-toggle span{font-size:13px}
+.password-toggle small{font:700 10px var(--sans)}
+.auth-dialog{isolation:isolate;background:linear-gradient(rgba(251,248,241,.94),rgba(251,248,241,.96)),url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1200&q=85") center/cover no-repeat;border-radius:8px}
+.auth-dialog>*{position:relative;z-index:1}
+.auth-dialog .eyebrow{letter-spacing:2.4px}
+.auth-dialog h2{color:var(--olive)}
+.auth-submit{box-shadow:0 8px 20px #26351f25;transition:transform .2s,background .2s}
+.auth-submit:hover{background:var(--rust);transform:translateY(-1px)}
+.auth-nav .auth-logout{background:var(--rust);border-color:var(--rust);color:#fff}
+@media(max-width:640px){
+ .menu-toggle{display:flex}
+ .primary-nav{z-index:11;max-height:calc(100svh - 76px);overflow-y:auto}
+ .primary-nav.is-open .auth-nav{margin-top:4px}
+ .auth-dialog{padding:32px 22px 25px}
+}
