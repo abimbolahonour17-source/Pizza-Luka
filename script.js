@@ -20,6 +20,30 @@ if (year) year.textContent = new Date().getFullYear();
   function goToMemberPage() { window.location.replace(MEMBER_PAGE); }
   function goToLanding() { window.location.replace(LANDING_PAGE); }
 
+  const menuToggle = document.querySelector(".menu-toggle");
+  const primaryNav = document.querySelector("#primary-nav");
+  if (menuToggle && primaryNav) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = primaryNav.classList.toggle("is-open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+    primaryNav.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", () => {
+        primaryNav.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+      });
+    });
+    document.addEventListener("click", event => {
+      if (!primaryNav.contains(event.target) && !menuToggle.contains(event.target)) {
+        primaryNav.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.setAttribute("aria-label", "Open navigation");
+      }
+    });
+  }
+
   if (!client) {
     if (isMemberPage) {
       document.documentElement.classList.add("auth-check-pending");
@@ -61,6 +85,18 @@ if (year) year.textContent = new Date().getFullYear();
   const confirmInput = document.querySelector("#auth-confirm");
   const newPasswordWrap = document.querySelector("#auth-new-password-wrap");
   const newPasswordInput = document.querySelector("#auth-new-password");
+  document.querySelectorAll("[data-password-toggle]").forEach(button => {
+    const input = document.getElementById(button.dataset.passwordToggle);
+    if (!input) return;
+    button.addEventListener("click", () => {
+      const show = input.type === "password";
+      input.type = show ? "text" : "password";
+      button.setAttribute("aria-label", show ? "Hide password" : "Show password");
+      button.setAttribute("aria-pressed", String(show));
+      const label = button.querySelector("small");
+      if (label) label.textContent = show ? "Hide" : "Show";
+    });
+  });
   const forgotButton = document.querySelector("#auth-forgot");
   const message = document.querySelector("#auth-message");
   const submit = document.querySelector("#auth-submit");
@@ -142,7 +178,8 @@ if (year) year.textContent = new Date().getFullYear();
       logout.addEventListener("click", async () => {
         logout.disabled = true;
         const {error} = await client.auth.signOut();
-        if (error) { logout.disabled = false; window.alert(friendlyError(error, "logout")); }
+        if (error) { logout.disabled = false; window.alert(friendlyError(error, "logout")); return; }
+        goToLanding();
       });
       authNav.append(email, logout);
     }
