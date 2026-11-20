@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#26351f">
+<meta name="description" content="Log in or create your Pizza Luka account in Vang Vieng, Laos."><title>Log in or Sign up | Pizza Luka</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="script.js" defer></script>
+</head>
+<body class="auth-page">
+<a class="auth-page-brand" href="index.html"><span class="brand-mark">Pizza Luka</span><span class="brand-place">VANG VIENG · LAOS</span></a>
+<div class="auth-modal is-open auth-page-modal" id="auth-modal" aria-hidden="false">
+    <div class="auth-backdrop"></div>
+    <section class="auth-dialog" role="dialog" aria-modal="true" aria-labelledby="auth-title" aria-describedby="auth-description">
+      <a class="auth-close" href="index.html" aria-label="Back to welcome page">×</a>
+      <p class="eyebrow">PIZZA LUKA ACCOUNT</p>
+      <h2 id="auth-title">Welcome back.</h2>
+      <p class="auth-description" id="auth-description">Log in to your account to continue.</p>
+      <form id="auth-form" novalidate>
+        <label class="auth-field" for="auth-email">Email address<input id="auth-email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></label>
+        <label class="auth-field" for="auth-password">Password<div class="password-control"><input id="auth-password" name="password" type="password" autocomplete="current-password" placeholder="Your password" required><button class="password-toggle" type="button" data-password-toggle="auth-password" aria-label="Show password" title="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/><path class="eye-slash" d="M4 4l16 16"/></svg></button></div></label>
+        <label class="auth-field" id="auth-confirm-wrap" for="auth-confirm" hidden>Confirm password<div class="password-control"><input id="auth-confirm" name="confirmPassword" type="password" autocomplete="new-password" placeholder="Enter your password again" required><button class="password-toggle" type="button" data-password-toggle="auth-confirm" aria-label="Show password" title="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/><path class="eye-slash" d="M4 4l16 16"/></svg></button></div></label>
+        <label class="auth-field" id="auth-new-password-wrap" for="auth-new-password" hidden>New password<div class="password-control"><input id="auth-new-password" name="newPassword" type="password" autocomplete="new-password" placeholder="Choose a new password" required><button class="password-toggle" type="button" data-password-toggle="auth-new-password" aria-label="Show password" title="Show password" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12s3.4-6 9.5-6 9.5 6 9.5 6-3.4 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/><path class="eye-slash" d="M4 4l16 16"/></svg></button></div></label>
+        <button class="auth-forgot" id="auth-forgot" type="button">Forgot password?</button>
+        <p class="auth-message" id="auth-message" role="status" aria-live="polite"></p>
+        <button class="auth-submit" id="auth-submit" type="submit">Log in</button>
+      </form>
+      <p class="auth-switch" id="auth-switch">New to Pizza Luka? <button type="button" data-auth-switch="signup">Create an account</button></p>
+    </section>
+  </div>
+</body></html>
