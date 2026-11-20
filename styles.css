@@ -111,3 +111,25 @@ body.auth-open{overflow:hidden}
 /* Password state: crossed eye means hidden; open eye means visible. */
 .password-toggle .eye-slash{display:block}
 .password-toggle.is-visible .eye-slash{display:none}
+
+/* Dedicated account page: full-bleed welcome image with a dark translucent panel. */
+.auth-page{min-height:100vh;background:#26351f url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=2200&q=90") center/cover fixed no-repeat;color:#fff}
+.auth-page:before{content:"";position:fixed;inset:0;background:linear-gradient(90deg,rgba(20,30,17,.94),rgba(20,30,17,.68) 55%,rgba(20,30,17,.48));pointer-events:none}
+.auth-page-brand{position:fixed;z-index:1002;top:32px;left:max(24px,calc((100% - 1160px)/2));display:flex;flex-direction:column;color:#fff;line-height:1}
+.auth-page-brand .brand-mark{font-size:34px}
+.auth-page-brand .brand-place{font-size:9px;letter-spacing:3px;margin-top:8px}
+.auth-page-modal{position:relative;z-index:2;min-height:100vh;padding:110px 20px 40px;display:flex;background:transparent}
+.auth-page-modal .auth-backdrop{display:none}
+.auth-page-modal .auth-dialog{width:min(100%,440px);max-height:none;overflow:visible;margin:auto;padding:38px 36px 32px;background:rgba(28,43,24,.68);color:#fff;border:1px solid rgba(255,255,255,.28);border-radius:12px;box-shadow:0 24px 80px rgba(0,0,0,.3);backdrop-filter:blur(12px)}
+.auth-page-modal .auth-dialog:before{left:36px;right:36px}
+.auth-page-modal .auth-dialog h2{color:#fff}
+.auth-page-modal .auth-description,.auth-page-modal .auth-switch{color:#e3e6dc}
+.auth-page-modal .auth-field{color:#f5f0e5}
+.auth-page-modal .auth-field input{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.35);color:#fff}
+.auth-page-modal .auth-field input::placeholder{color:#d4d8cc}
+.auth-page-modal .auth-field input:focus{border-color:#e9b28d;box-shadow:0 0 0 3px rgba(233,178,141,.18)}
+.auth-page-modal .auth-close{color:#fff;text-decoration:none}
+.auth-page-modal .auth-message{color:#f5f0e5}
+.auth-page-modal .auth-switch button{color:#efb18f}
+.auth-page-modal .password-toggle{background:#f7f2e8}
+@media(max-width:640px){.auth-page-brand{top:22px;left:20px}.auth-page-brand .brand-mark{font-size:29px}.auth-page-modal{padding:100px 16px 28px}.auth-page-modal .auth-dialog{padding:34px 23px 28px}}
