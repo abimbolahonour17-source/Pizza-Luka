@@ -1,8 +1,8 @@
 /* Pizza Luka Supabase authentication and gated member site.
    Replace these placeholders with the Supabase Project URL and anon/public key.
    Never expose a service_role or secret key in browser code. */
-const SUPABASE_URL = "SUPABASE_URL";
-const SUPABASE_ANON_KEY = "SUPABASE_ANON_KEY";
+const SUPABASE_URL = "https://wziegbupghjovoqcitii.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_XN4mkcn5DvZB2QIIqVyxAQ_0H5ejgUZ";
 const MEMBER_PAGE = "home.html";
 const LANDING_PAGE = "index.html";
 
