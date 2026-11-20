@@ -78,3 +78,32 @@ body.auth-open{overflow:hidden}
  .primary-nav.is-open .auth-nav{margin-top:4px}
  .auth-dialog{padding:32px 22px 25px}
 }
+
+
+/* Refined, understated password eye and welcoming account-card finish */
+.password-control input{padding-right:54px!important}
+.password-toggle{
+ right:10px;width:30px;height:28px;padding:0;justify-content:center;
+ border:1px solid #e4ddcf;border-radius:50%;background:#fffaf1;color:#6b725e;
+ transition:background .18s,border-color .18s,color .18s,transform .18s;
+}
+.password-toggle:hover{background:#f3e5d8;border-color:#d7a083;color:var(--rust);transform:translateY(-50%) scale(1.04)}
+.password-toggle svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.password-toggle small{display:none}
+.password-toggle.is-visible{background:#f5e8dd;border-color:#d7a083;color:var(--rust)}
+.auth-dialog{
+ width:min(100%,430px);padding:36px 34px 30px;
+ background:linear-gradient(145deg,rgba(251,248,241,.95),rgba(245,240,229,.92)),url("https://images.unsplash.com/photo-1579751626657-72bc17010498?auto=format&fit=crop&w=1400&q=88") center/cover no-repeat;
+ border:1px solid rgba(255,255,255,.72);border-radius:10px;
+ box-shadow:0 26px 90px rgba(10,18,8,.38);
+}
+.auth-dialog:before{content:"";position:absolute;top:0;left:34px;right:34px;height:3px;border-radius:0 0 4px 4px;background:linear-gradient(90deg,var(--rust),#d8a17c,var(--olive))}
+.auth-dialog .eyebrow{color:var(--rust);font-size:9px}
+.auth-dialog h2{font-size:34px}
+.auth-description{max-width:330px}
+.auth-field input{border-radius:5px;background:rgba(255,255,255,.88)}
+.auth-submit{border-radius:5px;letter-spacing:.08em}
+@media(max-width:640px){
+ .auth-dialog{padding:33px 22px 25px}
+ .auth-dialog:before{left:22px;right:22px}
+}
