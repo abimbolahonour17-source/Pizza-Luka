@@ -70,7 +70,7 @@ if (year) year.textContent = new Date().getFullYear();
     if (authNav) renderUser(session?.user || null);
   });
 
-  if (!modal || !authNav || !form) {
+  if (!modal || !form) {
     if (authNav) {
       client.auth.getSession().then(({data}) => renderUser(data.session?.user || null));
     }
@@ -101,7 +101,8 @@ if (year) year.textContent = new Date().getFullYear();
   const message = document.querySelector("#auth-message");
   const submit = document.querySelector("#auth-submit");
   const switchLine = document.querySelector("#auth-switch");
-  let mode = "login";
+  const requestedMode = new URLSearchParams(window.location.search).get("mode");
+  let mode = requestedMode === "signup" ? "signup" : "login";
   let lastFocus = null;
 
   function setMessage(text, isError = false) {
@@ -118,6 +119,7 @@ if (year) year.textContent = new Date().getFullYear();
     setTimeout(() => emailInput.focus(), 30);
   }
   function closeModal() {
+    if (document.body.classList.contains("auth-page")) { window.location.href = LANDING_PAGE; return; }
     modal.classList.remove("is-open");
     modal.setAttribute("aria-hidden", "true");
     document.body.classList.remove("auth-open");
@@ -142,6 +144,11 @@ if (year) year.textContent = new Date().getFullYear();
       ? 'Already have an account? <button type="button" data-auth-switch="login">Log in</button>'
       : 'New to Pizza Luka? <button type="button" data-auth-switch="signup">Create an account</button>';
     setMessage("");
+  }
+  renderMode();
+  if (document.body.classList.contains("auth-page")) {
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
   }
   function friendlyError(error, action) {
     const raw = String(error?.message || "").toLowerCase();
